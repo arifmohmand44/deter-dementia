@@ -8,6 +8,16 @@ npx prisma generate
 
 Remove-Item -Recurse -Force .next
 
+
+echo "# deter-dementia" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/arifmohmand44/deter-dementia.git
+git push -u origin main
+
+
 https://tailwindui.com/?ref=resources
 https://tailwindcss.com/docs
 https://merakiui.com/components/application-ui
