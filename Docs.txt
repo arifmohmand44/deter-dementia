@@ -1,0 +1,36 @@
+//database migration
+node scripts/init-db.js
+//OR
+npx prisma migrate reset
+npx prisma db push
+npx prisma db pull
+npx prisma generate
+
+Remove-Item -Recurse -Force .next
+
+https://tailwindui.com/?ref=resources
+https://tailwindcss.com/docs
+https://merakiui.com/components/application-ui
+
+//Icon
+https://flowbite.com/icons/
+
+https://www.youtube.com/watch?v=PrxdiJrrrWs&list=PLC3y8-rFHvwjOKd6gdf4QtV1uYNiQnruI&index=23
+
+https://github.com/gopinav
+
+//Sharp Missing In Production (this will learn)
+https://nextjs.org/docs/messages/sharp-missing-in-production
+
+//To install json server
+npm install -g json-server@0.17.4
+
+//Authentication
+https://www.youtube.com/watch?v=1MTyCvS05V4
+https://www.youtube.com/watch?v=Cm6-3pVCPEI
+
+//Meta data
+https://medium.com/@shahbazmehmood61/exploring-next-js-13-dynamic-metadata-with-generatemetadata-4f1bf596ae21
+
+//grids example
+https://turbofuture.com/internet/Tailwind-Grid-Example

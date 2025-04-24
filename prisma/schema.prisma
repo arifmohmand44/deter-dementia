@@ -1,0 +1,93 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  id                     String                   @id @default(dbgenerated("gen_random_uuid()"))
+  firstName              String
+  lastName               String
+  name                   String
+  email                  String                   @unique
+  phone                  String?
+  password               String?
+  emailVerified          DateTime?                @db.Timestamp(6)
+  image                  String?
+  firstLogin             Boolean?                 @default(false)
+  createdAt              DateTime                 @default(now()) @db.Timestamp(6)
+  updatedAt              DateTime                 @default(now()) @db.Timestamp(6)
+  accounts               accounts[]
+  authenticators         authenticators[]
+  dementia_questionnaire dementia_questionnaire[]
+  sessions               sessions[]
+}
+
+model accounts {
+  provider          String
+  providerAccountId String
+  userId            String
+  type              String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  createdAt         DateTime @default(now()) @db.Timestamp(6)
+  updatedAt         DateTime @default(now()) @db.Timestamp(6)
+  user              users    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([provider, providerAccountId])
+  @@index([userId])
+}
+
+model sessions {
+  sessionToken String   @id
+  userId       String
+  expires      DateTime @db.Timestamp(6)
+  createdAt    DateTime @default(now()) @db.Timestamp(6)
+  updatedAt    DateTime @default(now()) @db.Timestamp(6)
+  user         users    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([userId])
+}
+
+model verification_tokens {
+  identifier String
+  token      String
+  expires    DateTime @db.Timestamp(6)
+
+  @@id([identifier, token])
+}
+
+model authenticators {
+  credentialID         String  @unique
+  userId               String
+  providerAccountId    String
+  credentialPublicKey  String
+  counter              Int
+  credentialDeviceType String
+  credentialBackedUp   Boolean
+  transports           String?
+  user                 users   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([userId, credentialID])
+  @@index([userId])
+}
+
+model dementia_questionnaire {
+  questionnaireId String   @id @default(dbgenerated("gen_random_uuid()"))
+  userId          String
+  questions       Json
+  results         Json
+  createdAt       DateTime @default(now()) @db.Timestamp(6)
+  updatedAt       DateTime @default(now()) @db.Timestamp(6)
+  user            users    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([userId])
+}
