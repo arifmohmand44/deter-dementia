@@ -21,13 +21,54 @@ export default function DashboardPage() {
 
         // Prepare chart data
         const defaultProjection = [
-          { age_group: "60-65", probability: "0%" },
-          { age_group: "65-70", probability: "0%" },
-          { age_group: "70-75", probability: "0%" },
-          { age_group: "75-80", probability: "0%" },
-          { age_group: "80-85", probability: "0%" },
-          { age_group: "85-90", probability: "0%" },
-          { age_group: "90+", probability: "0%" }
+          {
+            age_group: "65-67",
+            probability: "88.68%"
+          },
+          {
+            age_group: "68-70",
+            probability: "92.38%"
+          },
+          {
+            age_group: "71-73",
+            probability: "96.08%"
+          },
+          {
+            age_group: "74-76",
+            probability: "99.78%"
+          },
+          {
+            age_group: "77-79",
+            probability: "100.00%"
+          },
+          {
+            age_group: "80-82",
+            probability: "100.00%"
+          },
+          {
+            age_group: "83-85",
+            probability: "100.00%"
+          },
+          {
+            age_group: "86-88",
+            probability: "100.00%"
+          },
+          {
+            age_group: "89-91",
+            probability: "100.00%"
+          },
+          {
+            age_group: "92-94",
+            probability: "100.00%"
+          },
+          {
+            age_group: "95-97",
+            probability: "100.00%"
+          },
+          {
+            age_group: "98-100",
+            probability: "100.00%"
+          }
         ];
 
         const chartDataStructure = {
