@@ -81,6 +81,7 @@ export default function Login() {
         setError("")
 
         if (!validateForm()) {
+            setIsLoading(false)
             return
         }
 
@@ -90,8 +91,6 @@ export default function Login() {
                 password: formData.password,
                 redirect: false,
             })
-
-            console.log(result);
 
             if (result?.error) {
                 setError("Invalid email or password")
