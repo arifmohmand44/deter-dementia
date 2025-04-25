@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Providers from '@/components/providers/session-provider';
+// import Providers from '@/components/providers/session-provider';
 
 // Initialize the Inter font with subsets
 const inter = Inter({
@@ -45,9 +45,9 @@ export default async function RootLayout({
             <body>
                 {/* Enable streaming with Suspense */}
                 <main className="min-h-screen bg-gray-50">
-                    <Providers>
+                    {/* <Providers> */}
                         {children}
-                    </Providers>
+                    {/* </Providers> */}
                 </main>
             </body>
         </html>

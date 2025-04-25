@@ -23,7 +23,7 @@ export const InputField: React.FC<InputFieldProps> = ({
             <input
                 type={showPassword ? "text" : type}
                 value={value}
-                name={name?.toLowerCase()}
+                name={name}
                 id={name?.toLowerCase()}
                 onChange={onChange}
                 onKeyDown={onKeyDown}

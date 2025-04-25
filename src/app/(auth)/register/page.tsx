@@ -6,7 +6,7 @@ import { RegisterFormData } from "@/types/register";
 import Button from "@/components/button";
 import Link from "next/link";
 import Alert from "@/components/alert";
-import { GoogleReCaptchaProvider, GoogleReCaptcha } from 'react-google-recaptcha-v3';
+// import { GoogleReCaptchaProvider, GoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 export default function Register() {
     const router = useRouter();
@@ -73,10 +73,10 @@ export default function Register() {
         e.preventDefault();
 
         // Validate CAPTCHA first
-        if (!captchaToken) {
-            setError('Please complete the CAPTCHA verification');
-            return;
-        }
+        // if (!captchaToken) {
+        //     setError('Please complete the CAPTCHA verification');
+        //     return;
+        // }
 
         // Validate the form
         const errors: any = {};
@@ -151,7 +151,7 @@ export default function Register() {
                 </h2>
             </div>
             <div className="mt-4 md:mx-auto md:w-full md:max-w-md">
-                <GoogleReCaptchaProvider
+                {/* <GoogleReCaptchaProvider
                     reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
                     scriptProps={{
                         async: true,
@@ -159,7 +159,7 @@ export default function Register() {
                         appendTo: 'body',
                         nonce: undefined,
                     }}
-                >
+                > */}
                     <form action="#" method="POST" className="space-y-4 md:space-y-4" onSubmit={registerHandler}>
                         <div className="grid grid-cols-2 gap-2">
                             <div className="mt-2">
@@ -249,12 +249,12 @@ export default function Register() {
                             </div>
                         </div>
                         {/* Hidden reCAPTCHA - will automatically verify */}
-                        {captchaReady && (
+                        {/* {captchaReady && (
                             <GoogleReCaptcha
                                 onVerify={handleCaptchaVerify}
                                 refreshReCaptcha={!captchaToken}
                             />
-                        )}
+                        )} */}
                         <div>
                             <Button
                                 text={isLoading ? "Processing..." : "Sign Up"}
@@ -266,7 +266,7 @@ export default function Register() {
                             />
                         </div>
                     </form>
-                </GoogleReCaptchaProvider>
+                {/* </GoogleReCaptchaProvider> */}
                 <div className="mt-4">
                     <Button
                         icon="Google"

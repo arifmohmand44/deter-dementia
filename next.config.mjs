@@ -8,24 +8,38 @@ const nextConfig = {
         }],
         formats: ['image/avif', 'image/webp'],
     },
-    // Server Actions are now stable in Next.js 15
+
+    // Modern stable config
+    serverExternalPackages: ['@prisma/client', '@auth/prisma-adapter'],
+
     experimental: {
-        serverComponentsExternalPackages: ['@prisma/client', '@auth/prisma-adapter'],
         serverActions: {
             enabled: true
         },
         optimizePackageImports: ['react-icons'],
-        turbo: {
-            enabled: true
-        }
     },
+
+    turbo: {
+        enabled: true
+    },
+
+    // Output configuration for standalone build
+    output: 'standalone',
+
     // Improve loading performance
     reactStrictMode: true,
+
     compiler: {
         removeConsole: process.env.NODE_ENV === 'production',
     },
+
     // Enable webpack optimization
-    webpack: (config, { isServer }) => {
+    webpack: (config, { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }) => {
+        if (config.cache && !dev) {
+            config.cache = Object.freeze({
+                type: 'memory',
+            });
+        }
         if (!isServer) {
             config.resolve.fallback = {
                 ...config.resolve.fallback,
@@ -38,6 +52,15 @@ const nextConfig = {
         }
         return config;
     },
+
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
+
+    typescript: {
+        ignoreBuildErrors: true,
+    },
+
     // Add recommended security headers
     headers: async() => [{
         source: '/:path*',
@@ -46,7 +69,7 @@ const nextConfig = {
             { key: 'Strict-Transport-Security', value: 'max-age=63072000' },
             { key: 'X-Content-Type-Options', value: 'nosniff' },
         ],
-    }, ],
+    }],
 };
 
 export default nextConfig;

@@ -8,7 +8,7 @@ npx prisma generate
 
 Remove-Item -Recurse -Force .next
 
-
+03335454319
 echo "# deter-dementia" >> README.md
 git init
 git add README.md

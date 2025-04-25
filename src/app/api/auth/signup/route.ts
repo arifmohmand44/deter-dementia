@@ -8,31 +8,31 @@ export async function POST(request: Request) {
       await request.json();
 
     // 1. First verify CAPTCHA
-    if (!captchaToken) {
-      return NextResponse.json(
-        { error: "CAPTCHA verification required" },
-        { status: 400 }
-      );
-    }
+    // if (!captchaToken) {
+    //   return NextResponse.json(
+    //     { error: "CAPTCHA verification required" },
+    //     { status: 400 }
+    //   );
+    // }
 
-    const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${captchaToken}`;
+    // const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${captchaToken}`;
 
-    const captchaResponse = await fetch(verificationUrl, {
-      method: "POST",
-    });
+    // const captchaResponse = await fetch(verificationUrl, {
+    //   method: "POST",
+    // });
 
-    const captchaData = await captchaResponse.json();
+    // const captchaData = await captchaResponse.json();
 
-    if (!captchaData.success) {
-      console.error("CAPTCHA verification failed:", captchaData);
-      return NextResponse.json(
-        {
-          error: "CAPTCHA verification failed",
-          details: captchaData["error-codes"] || "Unknown error",
-        },
-        { status: 400 }
-      );
-    }
+    // if (!captchaData.success) {
+    //   console.error("CAPTCHA verification failed:", captchaData);
+    //   return NextResponse.json(
+    //     {
+    //       error: "CAPTCHA verification failed",
+    //       details: captchaData["error-codes"] || "Unknown error",
+    //     },
+    //     { status: 400 }
+    //   );
+    // }
 
     // 2. Proceed with existing validation
     if (!email || !password || !firstName || !lastName) {
