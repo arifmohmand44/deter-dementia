@@ -21,9 +21,9 @@ export default async function middleware(request: NextRequest) {
   );
 
   // If the user is not logged in and trying to access a protected route
-  if (!isLoggedIn && !isPublicPath) {
-    return NextResponse.redirect(new URL("/login", nextUrl));
-  }
+  // if (!isLoggedIn && !isPublicPath) {
+  //   return NextResponse.redirect(new URL("/login", nextUrl));
+  // }
 
   // If the user is logged in and trying to access a login page
   if (
