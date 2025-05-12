@@ -17,9 +17,9 @@ export default function middleware(request: NextRequest) {
       nextUrl.pathname === path || nextUrl.pathname.startsWith(path + "/")
   );
 
-  // 👇 Redirect to /disclaimer if logged in and visiting /
+  // 👇 Redirect to /d-summary if logged in and visiting /
   if (isLoggedIn && nextUrl.pathname === "/") {
-    return NextResponse.redirect(new URL("/disclaimer", nextUrl));
+    return NextResponse.redirect(new URL("/d-summary", nextUrl));
   }
 
   // 👇 If not logged in and not visiting a public path, redirect to login
