@@ -23,7 +23,7 @@ export const QuestionsData: QuestionType[] = [
         key: "Genetic_Markers", text: "Do you have any of the following genetic markers?", type: "multi",
         value: "Multi",
         more: [
-            { key: "Genetics_APP", text: "APP", type: "yesno", value: "Yes" },
+            { key: "Genetics_APP", text: "APP", type: "yesno", value: "No" },
             { key: "Genetics_PSEN1", text: "PSEN1 / PSEN2", type: "yesno", value: "No" },
         ]
     },
@@ -42,7 +42,7 @@ export const QuestionsData: QuestionType[] = [
         value: "South Asian",
         options: ["Caucasian", "South Asian", "East Asian", "Black", "Other"],
     },
-    { key: "Family_History", text: "Do you have a family history of dementia in a first-degree relative?", type: "yesno", value: "Yes" },
+    { key: "Family_History", text: "Do you have a family history of dementia in a first-degree relative?", type: "yesno", value: "No" },
     { key: "Develop_dementia", text: "At what age(s) did your relative develop dementia?", type: "text" },
     {
         key: "Smoking_Status", text: "Are you a current or former cigarette smoker?", type: "yesno", value: "No",
@@ -116,7 +116,7 @@ export const QuestionsData: QuestionType[] = [
         key: "Lifestyle", text: "Lifestyle", type: "multi",
         value: "Multi",
         more: [
-            { key: "Sedentary_lifestyle", text: "Do you have a mostly sedentary lifestyle?", type: "yesno", value: "Yes" },
+            { key: "Sedentary_lifestyle", text: "Do you have a mostly sedentary lifestyle?", type: "yesno", value: "No" },
             { key: "Resistance_training", text: "Do you engage in regular resistance training exercise?", type: "yesno", value: "No" },
             { key: "Aerobic_exercise", text: "Do you engage in aerobic exercise?", type: "yesno", value: "No" },
             { key: "Other_exercise", text: "Do you engage in any other exercise on a regular basis?", type: "yesno", value: "No" },
@@ -135,7 +135,7 @@ export const QuestionsData: QuestionType[] = [
         key: "Ever_Had", text: "Have you ever had any of the following:", type: "multi",
         value: "Multi",
         more: [
-            { key: "Stroke", text: "Stroke", type: "yesno", value: "Yes" },
+            { key: "Stroke", text: "Stroke", type: "yesno", value: "No" },
             { key: "Traumatic_brain_injury", text: "Traumatic Brain Injury", type: "yesno", value: "No" },
             { key: "Concussion_History", text: "Concussion", type: "yesno", value: "No" },
             { key: "Brain_tumour", text: "Brain Tumour", type: "yesno", value: "No" },
@@ -159,10 +159,10 @@ export const QuestionsData: QuestionType[] = [
         key: "You_Have", text: "Do you have:", type: "multi",
         value: "Multi",
         more: [
-            { key: "Hypertension", text: "Hypertension (High Blood Pressure)", type: "yesno", value: "Yes" },
-            { key: "Coronary_Artery_Disease", text: "Coronary Artery Disease (Known heart disease, prior heart attack, etc)", type: "yesno", value: "Yes" },
-            { key: "Arrhythmia", text: "Any Cardiac Arrhythmia (Irregular heart beat)", type: "yesno", value: "Yes" },
-            { key: "Dyslipidemia", text: "Dyslipidemia (abnormal cholesterol)", type: "yesno", value: "Yes" },
+            { key: "Hypertension", text: "Hypertension (High Blood Pressure)", type: "yesno", value: "No" },
+            { key: "Coronary_Artery_Disease", text: "Coronary Artery Disease (Known heart disease, prior heart attack, etc)", type: "yesno", value: "No" },
+            { key: "Arrhythmia", text: "Any Cardiac Arrhythmia (Irregular heart beat)", type: "yesno", value: "No" },
+            { key: "Dyslipidemia", text: "Dyslipidemia (abnormal cholesterol)", type: "yesno", value: "No" },
         ]
     },
     { key: "Cardiac_arrest_history", text: "Have you ever had a cardiac arrest? (Meaning your heart stopped completely requiring CPR)", type: "yesno", value: "No" },
@@ -171,7 +171,7 @@ export const QuestionsData: QuestionType[] = [
         value: "Multi",
         more: [
             { key: "Type_1_Diabetes", text: "Type 1 Diabetes", type: "yesno", value: "No" },
-            { key: "Type_2_Diabetes", text: "Type 2 Diabetes", type: "yesno", value: "Yes" },
+            { key: "Type_2_Diabetes", text: "Type 2 Diabetes", type: "yesno", value: "No" },
             { key: "Renal_disease", text: "Renal Disease", type: "yesno", value: "No" },
             { key: "Rheumatoid_arthritis", text: "Rheumatoid Arthritis", type: "yesno", value: "No" },
         ]
@@ -180,7 +180,7 @@ export const QuestionsData: QuestionType[] = [
         key: "Health_Conditions", text: "Do you have any of the following mental health conditions?", type: "multi",
         value: "Multi",
         more: [
-            { key: "Depression", text: "Depression", type: "yesno", value: "Yes" },
+            { key: "Depression", text: "Depression", type: "yesno", value: "No" },
             { key: "Anxiety", text: "Anxiety", type: "yesno", value: "No" },
             { key: "Schizophrenia", text: "Schizophrenia", type: "yesno", value: "No" },
             { key: "Psychosis_for_other_reason", text: "Other type of psychosis", type: "yesno", value: "No" }
@@ -197,24 +197,24 @@ export const QuestionsData: QuestionType[] = [
         key: "Types_of_medications", text: "Do you currently take any of the following types of medications?", type: "multi",
         value: "Multi",
         more: [
-            { key: "Benzodiazepine_use", text: "Benzodiazepines", type: "yesno", value: "Yes" },
+            { key: "Benzodiazepine_use", text: "Benzodiazepines", type: "yesno", value: "No" },
             { key: "Antipsychotic_use", text: "Antipsychotics", type: "yesno", value: "No" },
             { key: "Other_psychiatric_medications", text: "Other psychiatric medications", type: "yesno", value: "No" },
-            { key: "Anticholinergic_medication_use", text: "Anticholinergic medications", type: "yesno", value: "Yes" },
-            { key: "Statin_use", text: "Statins", type: "yesno", value: "Yes" },
-            { key: "Aspirin_use", text: "Aspirin", type: "yesno", value: "Yes" },
-            { key: "Antihypertensive_medication_use", text: "Antihypertensive (Blood Pressure) medications", type: "yesno", value: "Yes" },
+            { key: "Anticholinergic_medication_use", text: "Anticholinergic medications", type: "yesno", value: "No" },
+            { key: "Statin_use", text: "Statins", type: "yesno", value: "No" },
+            { key: "Aspirin_use", text: "Aspirin", type: "yesno", value: "No" },
+            { key: "Antihypertensive_medication_use", text: "Antihypertensive (Blood Pressure) medications", type: "yesno", value: "No" },
         ]
     },
     { key: "ICU_stay_any_reason", text: "Have you ever spent more than 24h as a patient in the Intensive Care Unit?", type: "yesno", value: "No" },
     { key: "Delirium_history", text: "Have you ever had delirium?", type: "yesno", value: "No" },
-    { key: "Hearing_impairment", text: "Do you have uncorrected hearing impairment?", type: "yesno", value: "Yes" },
+    { key: "Hearing_impairment", text: "Do you have uncorrected hearing impairment?", type: "yesno", value: "No" },
     { key: "Visual_impairment", text: "Do you have uncorrected visual impairment?", type: "yesno", value: "No" },
     {
         key: "Sleep", text: "Do you have any of the following?", type: "multi", value: "Multi",
         more: [
-            { key: "Sleep_impairment", text: "Sleep impairment?", type: "yesno", value: "Yes" },
-            { key: "Sleep_apnea", text: "Untreated sleep apnea?", type: "yesno", value: "Yes" },
+            { key: "Sleep_impairment", text: "Sleep impairment?", type: "yesno", value: "No" },
+            { key: "Sleep_apnea", text: "Untreated sleep apnea?", type: "yesno", value: "No" },
             { key: "REM_sleep_behaviour_disorder", text: "REM sleep behaviour disorder?", type: "yesno", value: "No" }
         ]
     }
