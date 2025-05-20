@@ -30,7 +30,7 @@ export const InputField: React.FC<InputFieldProps> = ({
                 placeholder={placeholder}
                 autoComplete={name?.toLowerCase()}
                 required={true}
-                className={`border-gray-300 text-sm text-grey-800 border-2 rounded-3xl p-3 focus:outline-none focus:border-indigo-500 w-full sm:text-sm sm:leading-6 ${className}`}
+                className={`border-gray-300 text-sm border-2 rounded-3xl p-3 focus:outline-none focus:border-indigo-500 w-full sm:text-sm sm:leading-6 text-gray-900/1 ${className ?? ''}`}
             />
             {type === "password" && (
                 <button

@@ -17,7 +17,7 @@ export const Header = ({ userName = 'Dr. Raza' }: HeaderProps) => {
             aria-label="Main header"
         >
             {/* Welcome Message */}
-            <div className="text-lg xs:text-sm font-bold capitalize tracking-tight text-gray-900">
+            <div className="text-lg xs:text-sm font-bold capitalize tracking-tight text-gray-900/1">
                 Welcome {session?.user?.name ?? userName}
             </div>
 

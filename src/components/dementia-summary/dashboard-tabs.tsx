@@ -12,7 +12,7 @@ export default function DashboardTabs() {
             <button
                 onClick={() => setActiveTab("summary")}
                 className={cn(
-                    "px-6 py-2 rounded-full text-sm font-medium transition-colors",
+                    "px-6 py-2 rounded-full text-sm text-gray-900/1 font-medium transition-colors",
                     activeTab === "summary"
                         ? `${classes} border-indigo-600`
                         : `${classes} border-gray-40`,
@@ -23,7 +23,7 @@ export default function DashboardTabs() {
             <button
                 onClick={() => setActiveTab("details")}
                 className={cn(
-                    "px-6 py-2 rounded-full text-sm font-medium transition-colors flex items-center",
+                    "px-6 py-2 rounded-full text-sm text-gray-900/1 font-medium transition-colors flex items-center",
                     activeTab === "details"
                         ? `${classes} border-indigo-600`
                         : `${classes} border-gray-40`,

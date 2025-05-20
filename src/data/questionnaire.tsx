@@ -88,16 +88,16 @@ export const QuestionsData: QuestionType[] = [
         key: "Current_Height", text: "What is your height?", type: "multi",
         value: "Multi",
         more: [
-            { key: "Height_in_meter", text: "Meter", type: "number", value: 1, min: 1, max: 120 },
-            { key: "Height_in_feet", text: "Feet", type: "number", value: 3.28, min: 1, max: 120 },
+            { key: "Height_in_meter", text: "Height in meter", type: "number", value: 1, min: 1, max: 120 },
+            { key: "Height_in_feet", text: "Height in feet", type: "number", value: 3.28, min: 1, max: 120 },
         ]
     },
     {
         key: "Current_Weight", text: "What is your current weight?", type: "multi",
         value: "Multi",
         more: [
-            { key: "Weight_in_kilogram", text: "Kilogram", type: "number", value: 1, min: 1, max: 120 },
-            { key: "Weight_in_pound", text: "Pound", type: "number", value: 2.20, min: 1, max: 200 },
+            { key: "Weight_in_kilogram", text: "Weight in kilogram", type: "number", value: 1, min: 1, max: 120 },
+            { key: "Weight_in_pound", text: "Weight in pound", type: "number", value: 2.20, min: 1, max: 200 },
         ]
     },
     {

@@ -54,7 +54,6 @@ export default function RiskChart({ chartData }: { chartData: any }) {
       },
       animations: {
         enabled: true,
-        easing: 'easeinout',
         speed: 800
       }
     },
@@ -132,7 +131,7 @@ export default function RiskChart({ chartData }: { chartData: any }) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-xl font-semibold">Risk Of Dementia By Years</CardTitle>
+        <CardTitle className="text-xl font-semibold text-gray-900/1">Risk Of Dementia By Years</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="w-full h-[350px]">

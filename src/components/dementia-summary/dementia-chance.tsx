@@ -16,7 +16,7 @@ export default function DementiaRisk({
         <HalfCircularProgress percentage={percentage} size={160} />
       </CardContent>
       <CardFooter>
-        <h3 className="text-md font-medium text-center">{text}</h3>
+        <h3 className="text-md font-medium text-center text-gray-900/1">{text}</h3>
       </CardFooter>
     </Card>
   )

@@ -117,7 +117,7 @@ export default function Questionnaire() {
                     </h2>
                     <div className="flex justify-center items-center gap-20 xs:gap-5 h-[32rem]">
                         <div className="text-center max-w-full p-4">
-                            <h2 className={`text-xl font-bold mb-6 break-words`}>{currentQ.text}</h2>
+                            <h2 className={`text-xl font-bold text-gray-900/1 mb-6 break-words`}>{currentQ.text}</h2>
                             <div className="flex justify-center gap-20 xs:gap-5">
                                 {/* Previous Button */}
                                 <Button
@@ -180,7 +180,7 @@ export default function Questionnaire() {
                                         <div className={`grid grid-cols-1 gap-4`}>
                                             {currentQ.more?.map((moreQuestion, index) => (
                                                 <div key={moreQuestion.key} className={`${moreQuestion.type === "text" ? "" : "flex flex-wrap md:flex-nowrap"} items-start gap-4 w-full`}>
-                                                    <h3 className={`font-medium md:mb-1 w-full md:w-auto flex-1 ${moreQuestion.type === "text" ? "" : "text-left"}`}>{moreQuestion.text}</h3>
+                                                    <h3 className={`font-medium text-gray-900/1 md:mb-1 w-full md:w-auto flex-1 ${moreQuestion.type === "text" ? "" : "text-left"}`}>{moreQuestion.text}</h3>
                                                     {moreQuestion.type === "select" ? (
                                                         <div className="relative h-8 inline-flex border border-indigo-500 rounded-full overflow-hidden">
                                                             <Select

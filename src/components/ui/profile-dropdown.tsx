@@ -67,7 +67,7 @@ export const ProfileDropdown = ({ session }: ProfileDropdownProps) => {
                             height={20}
                         />
                         <div className="flex flex-col max-w-[120px]">
-                            <h3 className="font-semibold text-base capitalize cursor-pointer" title={session?.user?.name ?? 'User'}>{session?.user?.name ?? 'User'}</h3>
+                            <h3 className="font-semibold text-base text-gray-900/1 capitalize cursor-pointer" title={session?.user?.name ?? 'User'}>{session?.user?.name ?? 'User'}</h3>
                             <p className="text-xs text-gray-500 truncate cursor-pointer hover:text-indigo-500" title={session?.user?.email ?? 'user@example.com'}>{session?.user?.email ?? 'user@example.com'}</p>
                         </div>
                     </div>
