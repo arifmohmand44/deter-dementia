@@ -116,7 +116,7 @@ export default function Login() {
     return (
         <>
             <div className="md:mx-auto md:w-full md:max-w-md">
-                <h2 className="mt-4 text-center text-2xl leading-9 tracking-tight text-indigo-700 sm:text-3xl">Sign In</h2>
+                <h2 className="text-center text-2xl leading-9 tracking-tight text-indigo-700 sm:text-3xl">Sign In</h2>
             </div>
             <div className="md:mt-10 md:mx-auto md:w-full md:max-w-md">
                 {error &&

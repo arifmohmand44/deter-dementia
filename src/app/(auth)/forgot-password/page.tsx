@@ -56,7 +56,7 @@ export default function ForgotPassword() {
                 </h2>
                 <p className="text-center text-sm leading-9 tracking-tight text-gray-400 sm:text-sm">Please enter your email address</p>
             </div>
-            <div className="mt-4 md:mx-auto md:w-full md:max-w-md">
+            <div className="mt-4 w-full max-w-md">
                 <form action="#" method="POST" className="space-y-4 md:space-y-6" onSubmit={(e) => submitHandler(e)}>
                     <div>
                         <div className="mt-2">
