@@ -73,6 +73,7 @@ const config: Config = {
     extend: {
       screens: {
         xs: [{ min: "320px", max: "668px" }],
+        sm: [{ min: "669px", max: "992px" }],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

@@ -17,6 +17,11 @@ export default function QuestionnaireLayout({
             router.push('/'); // Redirect to homepage if no history
         }
     };
+
+    const handleDismiss = () => {
+        router.push('/'); // Redirect to homepage if no history
+    };
+
     return (
         <>
             <div className="overflow-hidden">
@@ -34,7 +39,13 @@ export default function QuestionnaireLayout({
                         <Logo />
                     </div>
                     <div className="flex justify-end">
-                        <Icon name="Dismiss" />
+                    <button
+                            type="button"
+                            className="cursor-pointer"
+                            onClick={handleDismiss}
+                        >
+                            <Icon name="Dismiss" />
+                        </button>
                     </div>
                 </div>
                 <div className="w-full">
