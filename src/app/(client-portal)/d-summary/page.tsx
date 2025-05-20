@@ -4,6 +4,7 @@ import DashboardTabs from "@/components/dementia-summary/dashboard-tabs"
 import DementiaChance from "@/components/dementia-summary/dementia-chance"
 // import Profile from "@/components/dementia-summary/profile"
 import RiskChart from "@/components/dementia-summary/risk-chart"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function DashboardPage() {
   const [questions, setQuestions] = useState<any>({});
@@ -97,7 +98,59 @@ export default function DashboardPage() {
         </div>
         <div className="md:col-span-3">
           {/* <Profile profileData={profileData} /> */}
-          {chartData && <RiskChart chartData={chartData} />}
+          {chartData ?
+            (
+              <RiskChart chartData={chartData} />
+            ) : (
+              <Card>
+                <div className="h-full w-full flex flex-col animate-pulse">
+                  {/* Chart Title Skeleton */}
+                  <CardHeader>
+                    <CardTitle>
+                      <div className="h-4 bg-gray-200 rounded w-1/4 mb-4"></div>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="py-5 w-full h-[300px]">
+                      {/* Y-Axis Skeleton */}
+                      <div className="flex space-x-4 h-full">
+                        <div className="flex flex-col justify-between h-full w-8">
+                          {[...Array(11)].map((_, i) => (
+                            <div key={`y-axis-${i}`} className="h-3 bg-gray-200 rounded w-full"></div>
+                          ))}
+                        </div>
+
+                        {/* Chart Area Skeleton */}
+                        <div className="flex-1 relative">
+                          {/* Grid Lines */}
+                          <div className="absolute inset-0 flex flex-col justify-between">
+                            {[...Array(11)].map((_, i) => (
+                              <div key={`grid-line-${i}`} className="h-px bg-gray-100 w-full"></div>
+                            ))}
+                          </div>
+
+                          {/* Area Chart Simulation */}
+                          <div className="absolute bottom-0 left-0 right-0 h-[85%]">
+                            <div className="relative h-full w-full">
+                              <div className="absolute bottom-0 left-0 right-0 h-full bg-gray-200 opacity-30 rounded-t"></div>
+                              <div className="absolute bottom-0 left-0 right-0 h-[30%] bg-gray-300 opacity-50 rounded-t"></div>
+                              <div className="absolute bottom-0 left-0 right-0 h-[15%] bg-gray-400 opacity-70 rounded-t"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* X-Axis Skeleton */}
+                      <div className="flex justify-between mt-2">
+                        {[...Array(12)].map((_, i) => (
+                          <div key={`x-axis-${i}`} className="h-3 bg-gray-200 rounded w-10"></div>
+                        ))}
+                      </div>
+                    </div>
+                  </CardContent>
+                </div>
+              </Card>
+            )}
         </div>
       </div>
 

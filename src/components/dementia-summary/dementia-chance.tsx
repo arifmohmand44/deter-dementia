@@ -8,7 +8,7 @@ interface DementiaRiskProps {
 }
 export default function DementiaRisk({
   percentage = 0,
-  text = "Dementia Chances At 60 Years"
+  text
 }: DementiaRiskProps) {
   return (
     <Card className="h-full flex flex-col items-center justify-center">
@@ -16,7 +16,15 @@ export default function DementiaRisk({
         <HalfCircularProgress percentage={percentage} size={160} />
       </CardContent>
       <CardFooter>
-        <h3 className="text-md font-medium text-center text-gray-900/1">{text}</h3>
+        {percentage > 0 ?
+          (
+            <h3 className="text-md font-medium text-center text-gray-900/1">{text}</h3>
+          ) : (
+            <div role="status" className="max-w-sm animate-pulse">
+              <div className="h-3 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
+            </div>
+          )}
+
       </CardFooter>
     </Card>
   )

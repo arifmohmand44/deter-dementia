@@ -134,7 +134,7 @@ export default function RiskChart({ chartData }: { chartData: any }) {
         <CardTitle className="text-xl font-semibold text-gray-900/1">Risk Of Dementia By Years</CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="w-full h-[350px]">
+        <div className="w-full h-[300px]">
           {categories.length > 0 && series[0].data.length > 0 ? (
             <Chart
               options={options}
