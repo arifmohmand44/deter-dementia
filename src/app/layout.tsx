@@ -44,7 +44,7 @@ export default async function RootLayout({
         <html lang="en" className={inter.className}>
             <body>
                 {/* Enable streaming with Suspense */}
-                <main className="min-h-screen bg-gray-50">
+                <main className="min-h-screen max-h-screen h-[100dvh] bg-gray-50">
                     {/* <Providers> */}
                         {children}
                     {/* </Providers> */}
