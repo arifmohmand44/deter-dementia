@@ -26,8 +26,14 @@ export default function RiskChart({ chartData }: { chartData: any }) {
     // Process and format the data
     const projectionData = chartData.chartData.future_projection
     const ranges = projectionData.map((item: any) => {
-      const ages = item.age_group.split('-').map(Number)
-      return `${ages[0]}-${ages[1]}`
+      if(item.age_group){
+        const ages = item.age_group.split('-').map(Number)
+        return `${ages[0]}-${ages[1]}`
+      }else{
+        const ages = item.age
+        //return `${ages[0]}-${ages[1]}`
+        return `${ages}`
+      }     
     })
 
     const values = projectionData.map((item: any) =>

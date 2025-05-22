@@ -6,8 +6,10 @@ import { useState, useEffect } from "react";
 import { cn } from "@/utils/cn-utils";
 import Favicon from "@/components/logos/favicon";
 import { DIcon } from "@/components/dynamicIcons";
+import { useMobileDetection } from "@/hooks/use-mobile-detection"
 
 export default function SideBar() {
+    const isMobile = useMobileDetection()
     const [collapsed, setCollapsed] = useState(false);
 
     const toggleSidebar = () => {
@@ -17,6 +19,11 @@ export default function SideBar() {
     const [open, setOpen] = useState(true);
     const [subMenuOpen, setSubMenuOpen] = useState(false);
     const pathname = usePathname();
+
+    useEffect(() => {
+        console.log(isMobile);
+        setCollapsed(isMobile);
+    }, [])
 
     const navigation = [
         {
@@ -139,9 +146,11 @@ export default function SideBar() {
                         </div>
                     )}
                 </div>
-                <button className="text-gray-400 hover:text-slate-600" onClick={toggleSidebar}>
-                    {collapsed ? <DIcon icon="Pi:ArrowSquareRightBold" size={18} className="text-gray-300" /> : <DIcon icon="Pi:ArrowSquareLeftBold" size={18} className="text-gray-300" />}
-                </button>
+                {!isMobile &&
+                    <button className="text-gray-400 hover:text-slate-600" onClick={toggleSidebar}>
+                        {collapsed ? <DIcon icon="Pi:ArrowSquareRightBold" size={18} className="text-gray-300" /> : <DIcon icon="Pi:ArrowSquareLeftBold" size={18} className="text-gray-300" />}
+                    </button>
+                }
             </div>
 
             {/* Main Menu */}
